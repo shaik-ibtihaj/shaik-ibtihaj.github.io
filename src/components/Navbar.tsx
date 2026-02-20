@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -14,6 +14,7 @@ const navLinks = [
 export default function Navbar() {
   const [isDark, setIsDark] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -56,7 +57,7 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => handleNavClick("#home")}
-          className="font-bold text-lg gradient-text-animated cursor-pointer"
+          className="font-bold text-lg gradient-text-animated cursor-pointer bg-transparent border-none p-0"
         >
           Shaik Ibtihaj
         </button>
@@ -74,19 +75,40 @@ export default function Navbar() {
           ))}
         </div>
 
-          {/* Right Controls */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              className="social-icon-btn"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-          </div>
+        {/* Right Controls */}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="social-icon-btn"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          {/* Mobile menu toggle */}
+          <button
+            onClick={() => setMenuOpen((o) => !o)}
+            className="social-icon-btn md:hidden"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
-
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className="md:hidden glass border-t border-border px-6 py-4 flex flex-col gap-3">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleNavClick(link.href)}
+              className="nav-link text-left cursor-pointer bg-transparent border-none p-0 py-1"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

@@ -62,8 +62,8 @@ export default function About() {
                 View Projects
               </button>
               <a
-                href="#"
-                download
+                href="/Ibtihajulla%20Sha%20Resume.pdf"
+                download="Ibtihajulla-Sha-Resume.pdf"
                 className="btn-outline-neon inline-block text-center"
               >
                 Download Resume

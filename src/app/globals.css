@@ -364,6 +364,7 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .social-icon-btn:hover {
@@ -371,6 +372,11 @@
   border-color: rgba(167, 139, 250, 0.5);
   box-shadow: 0 0 16px rgba(167, 139, 250, 0.3);
   transform: translateY(-3px);
+}
+
+/* ─── Spin animation ──────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* ─── Scrollbar styling ───────────────────────────────────── */
