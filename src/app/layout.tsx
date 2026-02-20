@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: "Shaik Ibtihajulla Sha | Data Science & Software Engineer",
   description:
     "Personal portfolio of Shaik Ibtihajulla Sha — Data Science and Software Engineer. Strategic Leader, Operations Expert and Team Builder.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
