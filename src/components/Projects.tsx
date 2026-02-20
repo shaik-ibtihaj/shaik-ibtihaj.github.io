@@ -9,7 +9,7 @@ const projects = [
     description:
       "A digital healthcare platform for managing appointments and medical records, streamlining patient-doctor interactions with a modern full-stack architecture.",
     tech: ["React", "Node.js", "SQL", "REST APIs"],
-    github: "https://github.com/shaik-ibtihaj",
+    github: "https://github.com/shaik-ibtihaj/Health-Plus",
     color: "#60a5fa",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     description:
       "All-in-one campus companion app for announcements, schedules, navigation, and services — designed for seamless student life.",
     tech: ["Kotlin", "Android Studio", "Firebase"],
-    github: "https://github.com/shaik-ibtihaj",
+    github: "https://github.com/shaik-ibtihaj/Campus-360",
     color: "#a78bfa",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     description:
       "Predictive ML model to identify customer churn using historical behavioral data, enabling proactive retention strategies.",
     tech: ["Python", "Scikit-learn", "Pandas", "NumPy"],
-    github: "https://github.com/shaik-ibtihaj",
+    github: "https://github.com/shaik-ibtihaj/churn-prediction",
     color: "#f472b6",
   },
   {
