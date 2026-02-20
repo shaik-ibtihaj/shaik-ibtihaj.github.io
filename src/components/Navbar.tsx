@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -15,7 +14,6 @@ const navLinks = [
 export default function Navbar() {
   const [isDark, setIsDark] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -76,43 +74,19 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right Controls */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            className="social-icon-btn"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden social-icon-btn"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        </div>
+          {/* Right Controls */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="social-icon-btn"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden glass border-t border-border">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="nav-link text-left cursor-pointer bg-transparent border-none p-0 py-1"
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+
     </nav>
   );
 }
