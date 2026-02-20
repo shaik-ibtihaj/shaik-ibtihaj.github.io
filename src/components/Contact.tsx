@@ -113,8 +113,8 @@ export default function Contact() {
 
             {/* Resume Download */}
             <a
-              href="#"
-              download
+              href="/Ibtihajulla Sha Resume.pdf"
+              download="Ibtihajulla-Sha-Resume.pdf"
               className="btn-neon inline-flex items-center gap-2 w-full justify-center"
             >
               <Download size={18} />
